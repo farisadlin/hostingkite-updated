@@ -1,0 +1,19 @@
+{
+  "name": "react-faris-adlin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "backend": "npm start --prefix backend",
+    "graphql": "npm start --prefix graphql",
+    "dev": "concurrently \"npm run client\" \"npm run backend\" \"npm run graphql\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.0.0",
+    "node-sass": "^5.0.0"
+  }
+}

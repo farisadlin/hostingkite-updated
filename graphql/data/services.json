@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Instant Deploy",
+    "desc": "Exclusive features to create websites easily & instantly",
+    "url": "fas fa-shipping-fast"
+  },
+  {
+    "id": 2,
+    "title": "Unlimited Bandwidth",
+    "desc": "Unlimited bandwidth ensures the smooth running of your website",
+    "url": "fas fa-ethernet"
+  },
+  {
+    "id": 3,
+    "title": "Free Domain & SSL",
+    "desc": "Minimum purchase of Super hosting 1 year free domain and SSL",
+    "url": "fas fa-cart-plus"
+  },
+  {
+    "id": 4,
+    "title": "24/7/365 Support",
+    "desc": "Our support staff is available 24/7/365 to assist you via Telephone or LiveChat with any hosting-related questions.",
+    "url": "fas fa-phone-alt"
+  },
+  {
+    "id": 5,
+    "title": "Money-Back Guarantee",
+    "desc": "Try our services at no risk! If you're not completely satisfied, you can cancel your hosting plan anytime for a complete refund.",
+    "url": "fas fa-money-bill-wave"
+  },
+  {
+    "id": 6,
+    "title": "Super Fast Hosting",
+    "desc": "Visitors don't like slow websites. With LiteSpeed Web Server support, your website loading time will increase rapidly.",
+    "url": "fas fa-fast-forward"
+  }
+]
