@@ -57,7 +57,6 @@ const Header = () => {
         <Nav className="ml-auto">
           <NavLink
             className="navbar-link d-flex justify-content-center align-items-center mx-3 my-2"
-            exact
             to="/services"
             style={{ color: "white" }}
             onClick={closeToggle}
@@ -66,7 +65,6 @@ const Header = () => {
           </NavLink>
           <NavLink
             className="navbar-link d-flex justify-content-center align-items-center mx-3 my-2"
-            exact
             to="/testimonial"
             style={{ color: "white" }}
             onClick={closeToggle}
@@ -75,7 +73,6 @@ const Header = () => {
           </NavLink>
           <NavLink
             className="navbar-link d-flex justify-content-center align-items-center mx-3 my-2"
-            exact
             to="/price"
             style={{ color: "white" }}
             onClick={closeToggle}
@@ -88,7 +85,6 @@ const Header = () => {
             style={{ color: "white" }}
           >
             <NavLink
-              exact
               to="/help"
               className="dropdown-link mx-2"
               onClick={closeToggle}
@@ -97,7 +93,6 @@ const Header = () => {
             </NavLink>
             <br />
             <NavLink
-              exact
               to="/blog"
               className="dropdown-link mx-2"
               onClick={closeToggle}
@@ -106,7 +101,6 @@ const Header = () => {
             </NavLink>
             <br />
             <NavLink
-              exact
               to="/contact-us"
               className="dropdown-link mx-2"
               onClick={closeToggle}
@@ -123,7 +117,6 @@ const Header = () => {
           ) : (
             <>
               <NavLink
-                exact
                 to="/login"
                 className="btn-link-login"
                 onClick={closeToggle}
@@ -141,7 +134,6 @@ const Header = () => {
                 </Button>
               </NavLink>
               <NavLink
-                exact
                 to="/register"
                 className="btn-link-register"
                 onClick={closeToggle}

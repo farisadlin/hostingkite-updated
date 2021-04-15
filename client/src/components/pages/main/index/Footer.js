@@ -78,25 +78,38 @@ const Footer = () => {
             className="footer-column mb-2"
           >
             <h5 className="text-white">Services</h5>
-            <a href="#" className="footer-link">
-              Web Hosting
-            </a>
-            <br />
-
-            <a href="#" className="footer-link">
-              Virtual Private Server
-            </a>
-            <br />
-
-            <a href="#" className="footer-link">
-              SSL Certificate
-            </a>
-            <br />
-
-            <a href="#" className="footer-link">
-              Hosting Migration
-            </a>
-            <br />
+            <ul style={{ listStyle: "none", padding: "0" }}>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Web Hosting
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Virtual Private Server
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Web Hosting
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Virtual Private Server
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  SSL Certificate
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Hosting Migration
+                </a>
+              </li>
+            </ul>
           </Col>
           <Col
             xl={2}
@@ -107,25 +120,28 @@ const Footer = () => {
             className="footer-column mb-2"
           >
             <h5 className="text-white">About Us</h5>
-            <a href="#" className="footer-link">
-              About
-            </a>
-            <br />
-
-            <a href="#" className="footer-link">
-              Special Promotion
-            </a>
-            <br />
-
-            <a href="#" className="footer-link">
-              Career
-            </a>
-            <br />
-
-            <a href="#" className="footer-link">
-              Contact Us
-            </a>
-            <br />
+            <ul style={{ listStyle: "none", padding: "0" }}>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  About{" "}
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Special Promotion
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Career{" "}
+                </a>
+              </li>
+              <li className="footer-info">
+                <a href="#" className="footer-link">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
           </Col>
           <Col
             xl={2}
@@ -136,36 +152,48 @@ const Footer = () => {
             className="footer-column mb-2"
           >
             <h5 className="text-white">Social Media</h5>
-            <div className="footer-social d-flex align-items-center my-1">
-              <FaFacebook className="footer-icon mr-2" />
-              <a href="#" className="footer-link">
-                Facebook
-              </a>
-            </div>
-            <div className="footer-social d-flex align-items-center flex-row my-1">
-              <FaInstagram className="footer-icon mr-2" />
-              <a href="#" className="footer-link">
-                Instagram
-              </a>
-            </div>
-            <div className="footer-social d-flex align-items-center my-1">
-              <FaYoutube className="footer-icon mr-2" />
-              <a href="#" className="footer-link">
-                Youtube
-              </a>
-            </div>
-            <div className="footer-social d-flex align-items-center my-1">
-              <FaTwitter className="footer-icon mr-2" />
-              <a href="#" className="footer-link">
-                Twitter
-              </a>
-            </div>
-            <div className="footer-social d-flex align-items-center my-1">
-              <FaLinkedin className="footer-icon mr-2" />
-              <a href="#" className="footer-link">
-                LinkedIn
-              </a>
-            </div>
+            <ul style={{ listStyle: "none", padding: "0" }}>
+              <li className="footer-info">
+                <div className="footer-social d-flex align-items-center my-1">
+                  <FaFacebook className="footer-icon mr-2" />
+                  <a href="#" className="footer-link">
+                    Facebook
+                  </a>
+                </div>
+              </li>
+              <li className="footer-info">
+                <div className="footer-social d-flex align-items-center flex-row my-1">
+                  <FaInstagram className="footer-icon mr-2" />
+                  <a href="#" className="footer-link">
+                    Instagram
+                  </a>
+                </div>
+              </li>
+              <li className="footer-info">
+                <div className="footer-social d-flex align-items-center my-1">
+                  <FaYoutube className="footer-icon mr-2" />
+                  <a href="#" className="footer-link">
+                    Youtube
+                  </a>
+                </div>
+              </li>
+              <li className="footer-info">
+                <div className="footer-social d-flex align-items-center my-1">
+                  <FaTwitter className="footer-icon mr-2" />
+                  <a href="#" className="footer-link">
+                    Twitter
+                  </a>
+                </div>
+              </li>
+              <li className="footer-info">
+                <div className="footer-social d-flex align-items-center my-1">
+                  <FaLinkedin className="footer-icon mr-2" />
+                  <a href="#" className="footer-link">
+                    LinkedIn
+                  </a>
+                </div>
+              </li>
+            </ul>
           </Col>
         </Row>
         <hr className="mt-4" style={{ borderColor: "white", width: "100%" }} />

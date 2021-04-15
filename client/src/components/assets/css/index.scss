@@ -325,12 +325,13 @@ a:hover {
 /* Footer Section */
 
 .footer-link:hover,
-.footer-link:link,
-.footer-social:hover,
-.footer-social:link {
+// .footer-link:link,
+.footer-social:hover {
     text-decoration: none;
     color: white !important;
 }
+// .footer-social:link
+
 
 .footer-link,
 .footer-info {

@@ -176,28 +176,28 @@ const LandingPage = () => {
           <Route exact path="/">
             <Home data={customer} loading={loadingRest} />
           </Route>
-          <Route exact path="/login">
+          <Route path="/login">
             <Login />
           </Route>
-          <Route exact path="/register">
+          <Route path="/register">
             <Register />
           </Route>
-          <Route exact path="/services">
+          <Route path="/services">
             <Services data={services} loading={loadingGraphql} />
           </Route>
-          <Route exact path="/price">
+          <Route path="/price">
             <Price data={price} loading={loadingGraphql} />
           </Route>
-          <Route exact path="/testimonial">
+          <Route path="/testimonial">
             <Testimonial data={testimonial} loading={loadingGraphql} />
           </Route>
-          <Route exact path="/contact-us">
+          <Route path="/contact-us">
             <Contact />
           </Route>
-          <Route exact path="/blog">
+          <Route path="/blog">
             <Blog data={blog} />
           </Route>
-          <Route exact path="/help">
+          <Route path="/help">
             <Help data={help} loading={loadingRest} />
           </Route>
         </Switch>

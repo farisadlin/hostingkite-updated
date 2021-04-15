@@ -1,9 +1,13 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../../../assets/css/index.scss";
+import SEO from "../../SEO";
 
 const Hero = () => {
     return (
+      <>
+    <SEO title="Home" description="Home" content="Home"/>
+
       <header className="hero-section d-flex justify-content-center align-items-center flex-column" >
         <Container className="hero-container">
           <Row>
@@ -26,6 +30,7 @@ const Hero = () => {
           </Row>
         </Container>
       </header>
+      </>
     );
   }
 
