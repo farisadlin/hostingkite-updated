@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {
-  ApolloClient,
-  InMemoryCache,
-  gql,
-  ApolloProvider,
-} from "@apollo/client";
+import {GET_DATA_PRICE, GET_DATA_SERVICES, GET_DATA_TESTIMONIAL} from "../graphql/queries"
+import {useQuery} from '@apollo/client'
 
 import "../assets/css/index.scss";
 
@@ -23,7 +19,7 @@ import Price from "./main/index/Price";
 import Blog from "./main/index/Blog";
 import Help from "./main/index/Help";
 
-const LandingPage = () => {
+const LandingPage = ({client}) => {
   const [newDataRest, setNewDataRest] = useState({
     help: [],
     customer: [],
@@ -31,76 +27,13 @@ const LandingPage = () => {
     loading: true,
   });
 
-  const [newDataGraphql, setNewDataGraphql] = useState({
-    price: [],
-    services: [],
-    testimonial: [],
-    loading: true,
-  });
-
-  const GRAPHQL_URL = "http://localhost:9000/";
-
-  /**
-   * * APOLLO GRAPHQL API
-   */
-
-  const client = new ApolloClient({
-    uri: GRAPHQL_URL,
-    cache: new InMemoryCache(),
-  });
-
-  const getGraphQL = async () =>
-    await client
-      .query({
-        query: gql`
-          query {
-            price {
-              id
-              hosting_type
-              price
-              duration
-              capacity_space
-              capacity_type
-              bandwidth_capacity
-              bandwidth_type
-              website_capacity
-              website_type
-              email_capacity
-              email_type
-              support_type
-              support_capacity
-              domain_policy
-            }
-            services {
-              id
-              title
-              desc
-              url
-            }
-            testimonial {
-              id
-              author
-              job_position
-              testimonial
-              url_avatar
-            }
-          }
-        `,
-      })
-      .then((res) => {
-        const {
-          data: { price, services, testimonial },
-          loading,
-        } = res;
-        setNewDataGraphql({
-          ...newDataGraphql,
-          price: price,
-          services: services,
-          testimonial: testimonial,
-          loading: loading,
-        });
-      })
-      .catch((err) => console.error(err.message));
+  useEffect(() => {
+    try {
+      getDataRest();
+    } catch (err) {
+      console.error(err.message);
+    }
+  }, []);
 
   /**
    * * REST API WITH AXIOS
@@ -144,65 +77,46 @@ const LandingPage = () => {
     );
   };
 
-  useEffect(() => {
-    try {
-      getDataRest();
-      getGraphQL();
-    } catch (err) {
-      console.error(err.message);
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const {
     customer,
     blog,
     help,
     loading: { loadingRest },
   } = newDataRest;
-  const {
-    price,
-    services,
-    testimonial,
-    loading: { loadingGraphql },
-  } = newDataGraphql;
 
   return (
     <Router>
-      <ApolloProvider client={client}>
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home data={customer} loading={loadingRest} />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/services">
-            <Services data={services} loading={loadingGraphql} />
-          </Route>
-          <Route path="/price">
-            <Price data={price} loading={loadingGraphql} />
-          </Route>
-          <Route path="/testimonial">
-            <Testimonial data={testimonial} loading={loadingGraphql} />
-          </Route>
-          <Route path="/contact-us">
-            <Contact />
-          </Route>
-          <Route path="/blog">
-            <Blog data={blog} />
-          </Route>
-          <Route path="/help">
-            <Help data={help} loading={loadingRest} />
-          </Route>
-        </Switch>
-        <Footer />
-      </ApolloProvider>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home data={customer} loading={loadingRest} />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/services">
+          <Services />
+        </Route>
+        <Route path="/price">
+          <Price />
+        </Route>
+        <Route path="/testimonial">
+          <Testimonial />
+        </Route>
+        <Route path="/contact-us">
+          <Contact />
+        </Route>
+        <Route path="/blog">
+          <Blog data={blog} />
+        </Route>
+        <Route path="/help">
+          <Help data={help} loading={loadingRest} />
+        </Route>
+      </Switch>
+      <Footer />
     </Router>
   );
 };

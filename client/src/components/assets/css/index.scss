@@ -194,8 +194,9 @@ a:hover {
 }
 
 .hero-section {
-    background-image: linear-gradient(rgba(67, 0, 113, 75%),
-            rgba(67, 0, 113, 75%)), url(../img/hero-cover.jpg);
+    position: relative;
+    background-image: linear-gradient(var(--separator-bg-color),
+    var(--separator-bg-color)), url(../img/hero-cover.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

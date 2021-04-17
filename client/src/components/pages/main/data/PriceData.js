@@ -1,7 +1,17 @@
+import { useQuery } from "@apollo/client";
 import React from "react";
 import { Row, Col, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { GET_DATA_PRICE } from "../../../graphql/queries";
 
-const PriceData = ({data}) => {
+const PriceData = () => {
+  const {
+    data: priceData,
+    loading: priceLoading,
+    error: priceError,
+  } = useQuery(GET_DATA_PRICE);
+
+  if (priceLoading) return <div>Loading...</div>;
+
   const formatPrice = (price) => {
     return Intl.NumberFormat("id-ID").format(price);
   };
@@ -11,7 +21,7 @@ const PriceData = ({data}) => {
     return Intl.NumberFormat("id-ID").format(price / discount);
   };
 
-  const items = data.map(
+  const items = priceData.price.map(
     (
       {
         hosting_type,

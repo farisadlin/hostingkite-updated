@@ -1,8 +1,17 @@
+import { useQuery } from "@apollo/client";
 import React from "react";
 import { Col } from "react-bootstrap";
+import { GET_DATA_TESTIMONIAL } from "../../../graphql/queries";
 
-const TestimonialData = ({ data }) => {
-  const items = data.map(
+const TestimonialData = () => {
+  const {
+    data: testimonialData,
+    loading: testimonialLoading,
+    error: testimonialError,
+  } = useQuery(GET_DATA_TESTIMONIAL);
+
+  if (testimonialLoading) return <div>Loading...</div>;
+  const items = testimonialData.testimonial.map(
     ({ author, job_position, testimonial, url_avatar }, key) => {
       return (
         <Col

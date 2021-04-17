@@ -1,8 +1,18 @@
+import { useQuery } from '@apollo/client';
 import React from 'react'
 import { Col } from "react-bootstrap";
+import { GET_DATA_SERVICES } from '../../../graphql/queries';
 
-const ServicesData = ({data}) => {
-    const items = data.map(({ title, desc, url }, key) => {
+const ServicesData = () => {
+  const {
+    data: servicesData,
+    loading: servicesLoading,
+    error: servicesError,
+  } = useQuery(GET_DATA_SERVICES);
+
+  if (servicesLoading) return <div>Loading...</div>;
+
+    const items = servicesData.services.map(({ title, desc, url }, key) => {
         return (
           <Col key={key} className="item-container mt-5" lg={4} md={6}>
             <div className="item-circle">
